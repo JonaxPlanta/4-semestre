@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #emoji {
+      width: 200px;
+      height: 200px;
+    }
+    .e1 {
+      background-image: url("imgs/e1.png");
+    }
+    .e2 {
+      background-image: url("imgs/e2.png");
+    }
+    .e3 {
+      background-image: url("imgs/e3.png");
+    }
+
+  </style>
+  <script>
+    function trocaremoji(e) {
+      var obj = document.getElementById("emoji");
+
+      if (e==1) {
+        obj.setAttribute("class", "e1");
+      } else if (e==2) {
+        obj.setAttribute("class", "e2");
+      } else if (e==3) {
+        obj.setAttribute("class", "e3");
+      }
+    }
+    function removerEmoji() {
+      var obj = document.getElementById("emoji");
+      obj.removeAttribute("class");
+    }
+    function verifica() {
+      var obj = document.getElementById("emoji");
+      if (obj.hasAttribute("class")) {
+        alert("Atributo class está na tag");
+      } else {
+        alert("Sem atributo class")
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <center>
+    <button onclick="trocaremoji(1)">Emoji 1</button>
+  <button onclick="trocaremoji(2)">Emoji 2</button>
+  <button onclick="trocaremoji(3)">Emoji 3</button>
+  <button onclick="removerEmoji()">Remover Emoji</button>
+  <button onclick="verifica()">Verificar</button>
+
+  <div id="emoji"></div>
+  </center>
+</body>
+
+</html>
