@@ -147,10 +147,79 @@ class contaBanco extends pessoaFisica {
   // Por incompetencia minha eu não vou terminar isso
   transferir() {
     console.log("[MANUTENÇÂO]: Desculpe-nos mas o sistema de transferência está atualmente em manutenção!");
+
     return this.selecionar();
 
-    var contaNome = String(prompt("Digite o nome do proprietártio conta: "))
-    var valor = ParseInt(prompt(`Digite o valor a ser transferido à conta de ${contaNome}: `))
+    var contaNome = (prompt("Digite o nome da conta conta: "));
+    // Era pra pegar a String e virar Variável
+    contaNome = eval(contaNome);
+    console.log(`
+    Qual valor deseja transferir à conta de ${contaNome}:
+    1 - R$ 10,00
+    2 - R$ 25,00
+    3 - R$ 50,00
+    4 - R$ 100,00
+    5 - R$ 200,00
+    6 - R$ 500,00
+    7 - R$ 1000,00
+    8 - Outro valor: 
+    0 - Cancelar operação (X)
+    `);
+    var valor = parseInt(prompt("Digite um número: "))
+    if (valor == 1 && this.saldo > valor) {
+      this.saldo -= 10;
+      contaNome.saldo += 10;
+      console.log(`[SUCESSO]: R$ ${valor},00 foram transferidos para a conta de ${contaNome}!`);
+      contaNome.verificarPessoaBanco();
+    } else if (valor == 2 && this.saldo > valor) {
+      this.saldo -= 25;
+      contaNome.saldo += 25;
+      console.log(`[SUCESSO]: R$ ${valor},00 foram transferidos para a conta de ${contaNome}!`);
+      contaNome.verificarPessoaBanco();
+    } else if (valor == 3 && this.saldo > valor) {
+      this.saldo -= 50;
+      contaNome.saldo += 50;
+      console.log(`[SUCESSO]: R$ ${valor},00 foram transferidos para a conta de ${contaNome}!`);
+      contaNome.verificarPessoaBanco();
+    } else if (valor == 4 && this.saldo > valor) {
+      this.saldo -= 100;
+      contaNome.saldo += 100;
+      console.log(`[SUCESSO]: R$ ${valor},00 foram transferidos para a conta de ${contaNome}!`);
+      contaNome.verificarPessoaBanco();
+    } else if (valor == 5 && this.saldo > valor) {
+      this.saldo -= 200;
+      contaNome.saldo += 200;
+      console.log(`[SUCESSO]: R$ ${valor},00 foram transferidos para a conta de ${contaNome}!`);
+      contaNome.verificarPessoaBanco();
+    } else if (valor == 6 && this.saldo > valor) {
+      this.saldo -= 500;
+      contaNome.saldo += 500;
+      console.log(`[SUCESSO]: R$ ${valor},00 foram transferidos para a conta de ${contaNome}!`);
+      contaNome.verificarPessoaBanco();
+    } else if (valor == 7 && this.saldo > valor) {
+      this.saldo -= 1000;
+      contaNome.saldo += 1000;
+      console.log(`[SUCESSO]: R$ ${valor},00 foram transferidos para a conta de ${contaNome}!`);
+      contaNome.verificarPessoaBanco();
+    } else if (valor == 8 && this.saldo > valor) {
+      valoNovo = parseInt(prompt("Digite o valor que deseja transferir: "))
+      if (valorNovo == 0 || valorNovo < 0) {
+        console.log(`[INVÁLIDO]: Valor inválido! Digite um número positivo.`);
+        return
+      }
+      this.saldo -= valorNovo;
+      contaNome.saldo += valorNovo;
+      console.log(`[SUCESSO]: R$ ${valor},00 foram transferidos para a conta de ${contaNome}!`);
+      contaNome.verificarPessoaBanco();
+    } else if (valor > this.saldo) {
+      console.log(`[INVÁLIDO]: Saldo insufiente! Selecione um valor válido.`);
+      return this.transferir();
+    } else if (valor == 0) {
+      this.cancelar();
+    } else {
+      console.log(`[INVÁLIDO]: Valor inválido! Digite uma das opções acima.`);
+      return this.transferir();
+    }
   }
 
   cancelar() {
@@ -181,5 +250,5 @@ var joaoBanco = new contaBanco("João", "028.874.778-03", "0164-9", "35.665-8", 
 joaoBanco.verificarPessoaBanco();
 joaoBanco.selecionar();
 
-// var teste = new contaBanco("teste", "123.456.789-00", "0123-0", "11.222-3")
+var contaTeste = new contaBanco("teste", "123.456.789-00", "0123-0", "11.222-3", 0)
 
