@@ -40,7 +40,7 @@ class Filosofia extends Ciencia {
     this.pensamento = pensamento;
   }
   pensar() {
-    return `O estudioso ${this.estudioso} da área de ${this.nome} é conhecido por seu conhecido estudo: "${this.estudoFamoso}" que diz que: "${this.teoria}".`
+    return `O estudioso ${this.estudioso} da área de ${this.nome} é conhecido por seu conhecido estudo: "${this.estudoFamoso}" que diz que: "${this.pensamento}".`
   }
 }
 
@@ -53,3 +53,13 @@ const estudiosos = [
 for (const estudioso of estudiosos) {
   console.log(`O estudioso ${estudioso.estudioso} estuda ${estudioso.nome}.`);
 }
+
+var pitagoras = estudiosos[0];
+console.log(pitagoras.calcular());
+
+var newton = estudiosos[1];
+console.log(newton.teorizar());
+
+var platao = estudiosos[2];
+console.log(platao.pensar());
+
