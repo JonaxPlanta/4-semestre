@@ -51,5 +51,5 @@ const estudiosos = [
 ]
 
 for (const estudioso of estudiosos) {
-  console.log(`O estudioso ${estudioso.estudioso} estuda ${this.nome}.`);
+  console.log(`O estudioso ${estudioso.estudioso} estuda ${estudioso.nome}.`);
 }
