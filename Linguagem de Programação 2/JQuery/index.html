@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usando JQuery</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div><h1>Lista de nomes</h1></div>
+  <div>
+    <ul style="font-size: 25px;">
+      <li id="l1">Roseane</li>
+      <li id="l2">Joseane</li>
+      <li id="l3">Leidislaine</li>
+      <li id="l4">Ivislaine</li>
+      <li id="l5">Madalaine</li>
+    </ul>
+  </div>
+  <div>
+    <button id="btn">Clique aqui</button>
+  </div>
+  <script>
+  //  $("h1").fadeOut("2000") // Sair da tela por 2 segundos
+  //  $("h1").fadeOut("2000").fadeIn("2000") // Sair da tela por 2 segundos e reaparecer
+  //  $("li").remove() // remove li
+  //  $("h1").append(" de pessoas") // insere informação
+  //  $("#btn").on("click", botao) // Ao clicar no botão, sumirá a lista de nomes
+  //    function botao() {
+  //      $("h1").remove()
+  //    }
+  //  $("#btn").on("click", botao)
+  //    function botao() {
+  //      $("li").css({"color":"blue"})
+  //    }
+  $("#btn").on("click", botao)
+  var n = 1;
+  function botao() {
+    switch (n) {
+      case 1:
+      $("#l1").css({"color":"blue"})
+      n++
+      break;
+      case 2:
+      $("#l2").css({"color":"yellow"})
+      n++
+      break;
+      case 3:
+      $("#l3").css({"color":"green"})
+      n++
+      break;
+      case 4:
+      $("#l4").css({"color":"brown"})
+      n++
+      break;
+      case 5:
+      $("#l5").css({"color":"red"})
+      n++
+      break;
+  }
+}
+  </script>
+</body>
+</html>
