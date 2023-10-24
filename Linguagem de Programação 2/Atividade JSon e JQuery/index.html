@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atividade JQuery e JSon</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  
+  <style>
+    body {
+      padding-top: 1%;
+      padding-inline: 10%;
+
+      display: flex;
+      flex-flow: row;
+    }
+    #jqu {
+      padding-right: 20%;
+
+      display: flex;
+      flex-flow: column;
+    }
+
+    #esp_01 {
+      height: 256px;
+      width: 512px;
+
+      padding-left: 1.7%;
+      padding-top: 1px;
+
+      background-color: rgb(235, 237, 250);
+      border-radius: 8px;
+      border: 2px solid rgb(136, 158, 158);
+    }
+    #tema {
+      height: 30px;
+      width: 108px;
+
+      margin-top: 90px;
+      margin-left: 396px;
+
+      background-color: rgb(46, 54, 86);
+      border-radius: 4px;
+      color: rgb(159, 167, 196);
+    }
+    #texto_01A {
+      color: rgb(48, 55, 83);
+      font-family: helvetica;
+    }
+    #texto_01B {
+      color: rgb(72, 80, 109);
+      font-family: helvetica;
+    }
+    #tema:hover {
+      transition: 0.5s;
+
+      height: 36px;
+      width: 118px;
+
+      margin-top: 86px;
+      margin-left: 386px;
+
+      font-size: 14.5px;
+    }
+
+    /* Atividade 2 */
+    #esp_02 {
+      height: 256px;
+      width: 512px;
+
+      padding-left: 1.7%;
+      padding-top: 1px;
+      margin-top: 15px;
+
+      background-color: rgb(255, 169, 169);
+      border-radius: 8px;
+      border: 2px solid rgb(183, 86, 82);
+    }
+    #desaparece {
+      height: 32px;
+      width: 118px;
+
+      margin-top: 58px;
+      margin-left: 384px;
+
+      background-color: rgb(174, 78, 75);
+      border-radius: 4px;
+      color: rgb(0, 0, 0);
+    }
+    #areaTexto {
+      height: 24px;
+      width: 504px;
+
+      text-align: center;
+      padding: 0.5px;
+    }
+    #textoPlace {
+      font-size: 24px;
+      font-family: helvetica;
+      color: rgb(170, 51, 51);
+    }
+    #texto_02A {
+      color: rgb(126, 25, 25);
+      font-family: helvetica;
+    }
+    #texto_02B {
+      color: rgb(113, 25, 25);
+      font-family: helvetica;
+    }
+    #desaparece:hover {
+      transition: 0.5s;
+
+      height: 36px;
+      width: 126px;
+
+      margin-top: 54px;
+      margin-left: 376px;
+
+      font-size: 14.5px;
+    }
+
+    /* Atividade 3 */
+    #esp_03 {
+      height: 256px;
+      width: 512px;
+
+      padding-left: 2%;
+      padding-top: 1px;
+      margin-top: 15px;
+
+      background-color: rgb(217, 255, 168);
+      border-radius: 8px;
+      border: 2px solid rgb(173, 209, 126);
+    }
+    #botoes {
+      margin-left: 152px;
+
+      display: flex;
+      flex-direction: column;
+    }
+    #containers {
+      display: flex;
+
+      width: 218px;
+      height: 102px;
+
+      background-color: rgb(172, 208, 124);
+
+      padding: 2%;
+    }
+    #containerA {
+      width: 30px;
+      height: 30px;
+      background-color: rgb(51, 0, 255);
+      border: 1px solid rgb(13, 0, 67);
+
+      margin-top: 5px;
+      margin-left: 30px;
+    }
+    #containerB {
+      width: 30px;
+      height: 30px;
+      background-color: rgb(255, 0, 0);
+      border: 1px solid rgb(100, 0, 0);
+
+      margin-top: 5px;
+      margin-left: 30px;
+    }
+    #containerC {
+      width: 30px;
+      height: 30px;
+      background-color: rgb(0, 255, 68);
+      border: 1px solid rgb(8, 78, 0);
+
+      margin-top: 5px;
+      margin-left: 30px;
+    }
+    .btn {
+      height: 22px;
+      width: 118px;
+
+      margin-bottom: 10px;
+
+      background-color: rgb(153, 131, 240);
+      border-radius: 4px;
+      color: rgb(0, 0, 0);
+    }
+    #subspace {
+      display: flex;
+      flex-direction: row;
+    }
+    #texto_03A {
+      color: rgb(12, 78, 78);
+      font-family: helvetica;
+    }
+    #texto_03B {
+      color: rgb(19, 105, 105);
+      font-family: helvetica;
+    }
+    #col:hover {
+      transition: 0.5s;
+
+      height: 26px;
+      width: 122px;
+
+      margin-inline: 2px;
+      margin-block: 2px;
+
+      font-size: 14.5px;
+    }
+    #ro:hover {
+      transition: 0.5s;
+
+      height: 26px;
+      width: 122px;
+
+      margin-inline: 2px;
+      margin-block: 2px;
+
+      font-size: 14.5px;
+    }
+    #rcol:hover {
+      transition: 0.5s;
+
+      height: 26px;
+      width: 122px;
+
+      margin-inline: 2px;
+      margin-block: 2px;
+
+      font-size: 14.5px;
+    }
+    #rro:hover {
+      transition: 0.5s;
+
+      height: 26px;
+      width: 122px;
+
+      margin-inline: 2px;
+      margin-block: 2px;
+
+      font-size: 14.5px;
+    }
+    #jason {
+      padding: 5%;
+
+      background-color: rgb(252, 242, 222);
+      color: rgb(62, 62, 45);
+      font-family: helvetica;
+
+      border: 2px solid rgb(80, 75, 65);
+      border-radius: 5px;
+    }
+
+  </style>
+
+</head>
+<body>
+  <div id="jqu">
+  <div id="ativ_01">
+    <div id="esp_01">
+      <h1 id="texto_01A">Aplicação número 1: </h1><h2 id="texto_01B">mudança de tema</h2>
+      <button id="tema">MUDAR TEMA</button>
+    </div>
+  </div>
+
+  <div id="ativ_02">
+    <div id="esp_02">
+      <h1 id="texto_02A">Aplicação número 2: </h1><h2 id="texto_02B">mudando transparência</h2>
+      <div id="areaTexto">
+        <h3 id="textoPlace">Texto placeholder</h3>
+      </div>
+      <button id="desaparece">MUDAR TEXTO</button>
+    </div>
+  </div>
+
+  <div id="ativ_03">
+    <div id="esp_03">
+      <h1 id="texto_03A">Aplicação número 3: </h1> <h2 id="texto_03B">teste direção</h2>
+      <div id="subspace">
+      <div id="containers">
+        <div id="containerA"></div>
+        <div id="containerB"></div>
+        <div id="containerC"></div>
+      </div>
+      <div id="botoes">
+        <button id="col" class="btn">Coluna</button>
+        <button id="ro" class="btn">Linha</button>
+        <button id="rcol" class="btn">Coluna reversa</button>
+        <button id="rro" class="btn">Linha reversa</button>
+      </div>
+      </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div id="jason">
+  <div id="ativ_04">
+  <div id="esp_04">
+  <h1>Aplicação número 1: </h1> <h2>Lista de compras</h2>
+  <ol id="listaCompras"></ol>
+  </div>
+  </div>
+
+  <div id="ativ_05">
+  <div id="esp_05">
+  <h1>Aplicação número 2: </h1> <h2>Caixa de ferramentas</h2>
+  <ul id="caixaFerramentas"></ul>
+  </div>
+  </div>
+
+  <div id="ativ_06">
+  <div id="esp_06">
+  <h1>Aplicação número 3: </h1> <h2>Videojogos</h2>
+  <div id="videogames"></div>
+  </div>
+  </div>
+  </div>
+
+  <script>
+    // aplicação 1:
+    $("#tema").on("click", mudaTema)
+    let temaCor = 0;
+    function mudaTema() {
+      switch(temaCor) {
+        case 0:
+        $("#esp_01").css({"background-color" : "#0D2F4F"})
+        $("#esp_01").css({"border" : "2px solid rgb(46, 54, 86)"})
+        $("#texto_01A").css({"color" : "#419FC0"})
+        $("#texto_01B").css({"color" : "#319DC0"})
+        $("#tema").css({"background-color" : "rgb(159, 167, 196)"})
+        $("#tema").css({"color" : "rgb(46, 54, 86)"})
+        temaCor = 1
+        break;
+
+        case 1:
+        $("#esp_01").css({"background-color" : "rgb(235, 237, 250"})
+        $("#esp_01").css({"border" : "2px solid rgb(136, 158, 158)"})
+        $("#texto_01A").css({"color" : "rgb(48, 55, 83)"})
+        $("#texto_01B").css({"color" : "rgb(72, 80, 109)"})
+        $("#tema").css({"background-color" : "rgb(46, 54, 86)"})
+        $("#tema").css({"color" : "rgb(159, 167, 196)"})
+        temaCor = 0
+        break;
+      }
+    }
+    // aplicação 2:
+    $("#desaparece").on("click", mudaTexto)
+    let textoSituacao = 0;
+    function mudaTexto() {
+      switch (textoSituacao) {
+        case 0:
+        $("#textoPlace").fadeOut("500")
+        textoSituacao = 1;  
+        break;
+      
+        case 1:
+        $("#textoPlace").fadeIn("500")
+        textoSituacao = 0;
+        break;
+      }
+    }
+    // aplicação 3:
+    $("#col").on("click", coluna)
+    $("#ro").on("click", linha)
+    $("#rcol").on("click", colunaReversa)
+    $("#rro").on("click", linhaReversa)
+    function coluna() {
+      $("#containers").css({"flex-direction":"column"})
+    }
+    function linha() {
+      $("#containers").css({"flex-direction":"row"})
+    }
+    function colunaReversa() {
+      $("#containers").css({"flex-direction":"column-reverse"})
+    }
+    function linhaReversa() {
+      $("#containers").css({"flex-direction":"row-reverse"})
+    }
+
+    // aplicação 4:
+    var listaCompras = document.querySelector("#listaCompras")
+    fetch("datas.json").then((compras) => {
+      compras.json().then((listas) => {
+        listas.produtos.map((lista) => {
+          listaCompras.innerHTML += `<li>
+            Nome: ${lista.nome}
+            <br>
+            Preço: R$${lista.preco}
+            </li>`
+        })
+      })
+    })
+    // aplicação 5:
+    var caixaFerramentas = document.querySelector("#caixaFerramentas")
+    fetch("datas.json").then((caixas) => {
+      caixas.json().then((ferramentas) => {
+        ferramentas.ferramentas.map((ferramenta) => {
+          caixaFerramentas.innerHTML += `<li>A ferramenta ${ferramenta.nome} é usada para ${ferramenta.uso} e é feita de ${ferramenta.material}.</li>`
+        })
+      })
+    })
+    // aplicação 6:
+    var videogames = document.querySelector("#videogames")
+    fetch("datas.json").then((games) => {
+      games.json().then((jogos) => {
+        jogos.jogos.map((jogo) => {
+          videogames.innerHTML += `<li>O jogo ${jogo.nome} é de ${jogo.genero}.</li>`
+        })
+      })
+    })
+  </script>
+</body>
+</html>

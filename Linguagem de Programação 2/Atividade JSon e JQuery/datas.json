@@ -1,0 +1,74 @@
+{
+  "produtos": [
+  {
+    "nome" : "leite",
+    "preco" : 7.99
+  },
+  {
+    "nome" : "pão",
+    "preco" : 8
+  },
+  {
+    "nome" : "ovos",
+    "preco" : 12.99
+  },
+  {
+    "nome" : "arroz",
+    "preco" : 23
+  },
+  {
+    "nome" : "desinfetante",
+    "preco" : 18.99
+  },
+  {
+    "nome" : "papel higiênico",
+    "preco" : 12.99
+  }
+],
+  "ferramentas": [
+  {
+    "nome" : "chave de fendas",
+    "uso" : "colocar e tirar parafusos",
+    "material" : "metal e borracha"
+  },
+  {
+    "nome" : "martelo",
+    "uso" : "colocar e tirar pregos e rebites",
+    "material" : "metal e madeira"
+  },
+  {
+    "nome" : "furadeira",
+    "uso" : "furar superfícies com brocas",
+    "material" : "metal e componetes mecânicos"
+  },
+  {
+    "nome" : "serrote",
+    "uso" : "cortar materiais",
+    "material" : "metal"
+  },
+  {
+    "nome" : "chave inglesa",
+    "uso" : "apertar ou afrouxar porcas e parafusos",
+    "material" : "metal e borracha"
+  },
+  {
+    "nome" : "alicate",
+    "uso" : "apertar, afrouxar ou cortar diversos componentes",
+    "material" : "metal e borracha"
+  }
+  ],
+    "jogos": [
+    {
+      "nome" : "Minecraft",
+      "genero" : "exploração e sobrevivência"
+    },
+    {
+      "nome" : "Outlast",
+      "genero" : "horro de sobrevivência"
+    },
+    {
+      "nome" : "Overwatch",
+      "genero" : "tiro em primeira pessoa"
+    }
+    ]
+}
